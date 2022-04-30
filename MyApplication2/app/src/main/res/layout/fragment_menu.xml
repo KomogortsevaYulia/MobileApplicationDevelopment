@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.menu.MenuFragment">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_search_screen"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin_medium"
+        android:text="@string/btn_menu_search"
+        android:textColor="@color/black"
+        app:cornerRadius="@dimen/material_button_corner_radius"
+        app:iconPadding="-24dp"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        app:rippleColor="@color/black"
+        app:boxStrokeWidth="@dimen/material_button_stroke_width" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_favorite_screen"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin_medium"
+        android:text="@string/btn_menu_favorite"
+        android:textColor="@color/red"
+        app:cornerRadius="@dimen/material_button_corner_radius"
+
+        app:iconPadding="-24dp"
+        app:iconTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search_screen"
+        app:strokeColor="@color/red"
+        app:rippleColor="@color/red"
+        app:boxStrokeWidth="@dimen/material_button_stroke_width" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
