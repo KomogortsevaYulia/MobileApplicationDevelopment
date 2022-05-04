@@ -32,7 +32,7 @@ class BookRecyclerViewHolder (
             )
         }
 
-        //item.volumeInfo?.imageLinks?.smallThumbnail?.let { loadPokemonImage(it) }
+        item.volumeInfo?.imageLinks?.smallThumbnail?.let { loadPokemonImage(it) }
     }
 
     private fun loadPokemonImage(url: String) {
