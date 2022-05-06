@@ -23,8 +23,9 @@ class BookRecyclerViewHolder (
 
     fun bind(item: Item) {
         mBinding.tvPokemonName.text = item.volumeInfo?.title
+        mBinding.tvPokemonAuthor.text = item.volumeInfo?.authors?.get(0)
 
-        mBinding.btnCardAddInFavorite.text = activity.getString(R.string.card_btn_favorite_add)
+        mBinding.btnCardAddInFavorite.text = "Добавить в избранное"
         mBinding.btnCardAddInFavorite.setOnClickListener {
             onPokemonCardClickListener.onAddToFavoriteClicked(
                 item = item,

@@ -18,20 +18,36 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/app_margin_medium"
-            android:layout_marginTop="@dimen/app_margin_medium"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Book" />
+            tools:text="Название" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_pokemon_author"
+            style="@style/card_pokemon_title_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/app_margin_medium"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_name"
+            tools:text="Автор" />
 
         <ImageView
             android:id="@+id/iv_pokemon_image"
-            android:layout_width="169dp"
-            android:layout_height="240dp"
+            android:layout_width="198dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="28dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pokemon_author" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_card_add_in_favorite"
@@ -45,13 +61,36 @@
 
             app:cornerRadius="@dimen/material_button_corner_radius"
             app:iconPadding="-24dp"
-            app:iconTint="@color/red"
+            app:iconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_pokemon_image"
+            app:layout_constraintVertical_bias="1.0"
             app:rippleColor="@color/red"
             app:strokeColor="@color/red" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="Название:"
+            app:layout_constraintBottom_toTopOf="@+id/tv_pokemon_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Автор:"
+            app:layout_constraintBottom_toTopOf="@+id/tv_pokemon_author"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

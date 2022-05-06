@@ -3,18 +3,18 @@
 
     <style name="card_pokemon_title_text_style">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="card_pokemon_medium_title_text_style">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="card_pokemon_exp_title_text_style">
         <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="card_pokemon_forms_list_item_text_style">
