@@ -1,11 +1,14 @@
 package com.example.myapplication.presentation.favorite
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.os.Parcelable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.myapplication.R
@@ -16,7 +19,7 @@ import com.example.myapplication.presentation.adapter.book.BookRecyclerViewAdapt
 import com.example.myapplication.presentation.adapter.book.OnBookCardClickListener
 import javax.inject.Inject
 
-class FavoriteFragment : Fragment(){
+class FavoriteFragment : Fragment(), OnBookCardClickListener {
 
     private val mBinding by viewBinding(FragmentFavoriteBinding::bind)
 
@@ -47,7 +50,7 @@ class FavoriteFragment : Fragment(){
         initListeners()
         initObservers()
 
-        mViewModel.getFavoritePokemonList()
+        mViewModel.getFavoriteBookList()
     }
 
     private fun initListeners() {
@@ -56,24 +59,40 @@ class FavoriteFragment : Fragment(){
 
     private fun initObservers() {
         mViewModel.favoritePokemonListLiveData.observe(viewLifecycleOwner) {
-           // mAdapter = BookRecyclerViewAdapter(it.items, requireActivity(), this)
+            Log.d("book_list_favorite", "$it")
+            mAdapter = BookRecyclerViewAdapter(it, requireActivity(), this, isDeletable = true)
             mBinding.rcvFavoritePokemon.adapter = mAdapter
             mAdapter.notifyDataSetChanged()
 
-            if (it.items.isEmpty()) {
-                mBinding.ivPokemonListEmpty.visibility = View.VISIBLE
-                mBinding.rcvFavoritePokemon.visibility = View.GONE
-            } else {
-                mBinding.ivPokemonListEmpty.visibility = View.GONE
-                mBinding.rcvFavoritePokemon.visibility = View.VISIBLE
-            }
-            mBinding.rcvFavoritePokemon.layoutManager?.onRestoreInstanceState(rcvState)
+//            mViewModel.favoritePokemonListLiveData.observe(viewLifecycleOwner) { items ->
+//                if (items != null) {
+//                    mAdapter = BookRecyclerViewAdapter(items, requireActivity(), this@FavoriteFragment)
+//                    mBinding.rcvFavoritePokemon.adapter = mAdapter
+//                    mAdapter.notifyDataSetChanged()
+//                }
+//                /* if (it.items.isEmpty()) {
+//                     mBinding.ivPokemonListEmpty.visibility = View.VISIBLE
+//                     mBinding.rcvFavoritePokemon.visibility = View.GONE
+//                 } else {
+//                     mBinding.ivPokemonListEmpty.visibility = View.GONE
+//                     mBinding.rcvFavoritePokemon.visibility = View.VISIBLE
+//                 }
+//                 mBinding.rcvFavoritePokemon.layoutManager?.onRestoreInstanceState(rcvState)*/
+//            }
         }
     }
 
-//    override fun onRemoveFromFavoriteClicked(item: Item, position: Int) {
-//        rcvState = mBinding.rcvFavoritePokemon.layoutManager?.onSaveInstanceState()
-//        item.id?.let { mViewModel.removeBookById(it) }
-//        mAdapter.notifyItemRemoved(position)
-//    }
+    override fun onAddToFavoriteClicked(item: Item, position: Int) {
+
+    }
+
+    override fun onRemoveFromFavoriteClicked(item: Item, position: Int) {
+        Toast.makeText(requireContext(), "$position", Toast.LENGTH_SHORT).show()
+        Log.d("BRUH", "before = ${mAdapter.getList().map { it.id }}")
+        //rcvState = mBinding.rcvFavoritePokemon.layoutManager?.onSaveInstanceState()
+        mViewModel.removeBookById(item.id)
+        mAdapter.notifyItemRemoved(0)
+        //mAdapter.notifyItemRangeChanged(position, mAdapter.getList().size)
+        Log.d("BRUH", "after = ${mAdapter.getList().map { it.id }}")
+    }
 }

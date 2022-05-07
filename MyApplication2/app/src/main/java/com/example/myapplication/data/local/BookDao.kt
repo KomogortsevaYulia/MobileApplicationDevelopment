@@ -13,7 +13,7 @@ import io.reactivex.Single
 @Dao
 interface BookDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertBook(item: Item)
 
     @Query("SELECT * FROM item_table")

@@ -17,4 +17,5 @@
     <string name="card_pokemon_held_items_none">No held items</string>
     <string name="card_exp">Base exp: %d</string>
     <string name="card_btn_favorite_remove">remove from favorite</string>
+    <string name="no_authors">no authors</string>
 </resources>

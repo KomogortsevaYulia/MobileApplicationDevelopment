@@ -5,4 +5,6 @@ import com.example.myapplication.domain.model.Item
 
 interface  OnBookCardClickListener {
     fun onAddToFavoriteClicked(item: Item, position: Int)
+
+    fun onRemoveFromFavoriteClicked(item: Item, position: Int)
 }

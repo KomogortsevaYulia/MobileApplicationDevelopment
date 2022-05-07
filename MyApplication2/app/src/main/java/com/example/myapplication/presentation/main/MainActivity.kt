@@ -2,6 +2,7 @@ package com.example.myapplication.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.myapplication.R
 import com.example.myapplication.app.App
 import javax.inject.Inject
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         (application as App).appComponent.inject(this)
 
+        Log.d("BRUH", "${filesDir}")
+        Log.d("BRUH", "${cacheDir}")
     }
 }
 

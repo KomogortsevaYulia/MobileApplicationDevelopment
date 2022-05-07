@@ -8,16 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.app.App
 import com.example.myapplication.databinding.FragmentSearchBinding
-import com.example.myapplication.domain.model.Book
 import com.example.myapplication.domain.model.Item
 import com.example.myapplication.presentation.adapter.book.BookRecyclerViewAdapter
 import com.example.myapplication.presentation.adapter.book.OnBookCardClickListener
-import com.example.myapplication.presentation.adapter.book_forms.BookFormsRecyclerViewAdapter
-import com.example.myapplication.presentation.favorite.FavoriteViewModel
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -128,5 +124,9 @@ class SearchFragment : Fragment(), OnBookCardClickListener {
     override fun onAddToFavoriteClicked(item: Item, position: Int) {
         mViewModel.addBookToFavorite(item)
         mAdapter.notifyItemRemoved(position)
+    }
+
+    override fun onRemoveFromFavoriteClicked(item: Item, position: Int) {
+
     }
 }

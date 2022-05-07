@@ -24,16 +24,19 @@ class FavoriteViewModel @Inject constructor(
     private val saveBookUseCase: SaveBookUseCase
 ) : ViewModel() {
 
-    private val _favoritePokemonListLiveData: MutableLiveData<Book> = MutableLiveData()
-    val favoritePokemonListLiveData: LiveData<Book> = _favoritePokemonListLiveData
+    private val _favoritePokemonListLiveData: MutableLiveData<List<Item>> = MutableLiveData()
+    val favoritePokemonListLiveData: LiveData<List<Item>> = _favoritePokemonListLiveData
 
     @SuppressLint("CheckResult")
-    fun getFavoritePokemonList() {
+    fun getFavoriteBookList() {
         getBookUseCase.getFavoriteBookList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.d("book_list_favorite", "${it}")
+                _favoritePokemonListLiveData.value = it
             }, {
+                Log.d("book_list_favorite", "${it.message}")
             })
     }
 
@@ -47,16 +50,9 @@ class FavoriteViewModel @Inject constructor(
             .subscribe({
                 removeBookUseCase.removeBookById(it)
             }, {
-
+                Log.d("BRUH", "${it.message}")
             })
     }
 
-    private fun getFavoriteBookListObserver(): Single<Book> {
-        return object : Single<Book>() {
 
-            override fun subscribeActual(observer: SingleObserver<in Book>) {
-                TODO("Not yet implemented")
-            }
-        }
-    }
 }
