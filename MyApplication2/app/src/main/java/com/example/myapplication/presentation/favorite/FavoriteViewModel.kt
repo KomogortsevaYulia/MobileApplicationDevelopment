@@ -27,7 +27,7 @@ class FavoriteViewModel @Inject constructor(
     private val _favoritePokemonListLiveData: MutableLiveData<List<Item>> = MutableLiveData()
     val favoritePokemonListLiveData: LiveData<List<Item>> = _favoritePokemonListLiveData
 
-    @SuppressLint("CheckResult")
+
     fun getFavoriteBookList() {
         getBookUseCase.getFavoriteBookList()
             .subscribeOn(Schedulers.io())
@@ -40,13 +40,11 @@ class FavoriteViewModel @Inject constructor(
             })
     }
 
-
-
-    @SuppressLint("CheckResult")
-    fun removeBookById(id: String) {
+    fun removeBookById(id: String, onSuccess: () -> Unit) {
         Single.just(id)
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
+            .doAfterSuccess { onSuccess() }
             .subscribe({
                 removeBookUseCase.removeBookById(it)
             }, {

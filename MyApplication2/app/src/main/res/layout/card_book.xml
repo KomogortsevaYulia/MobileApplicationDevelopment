@@ -56,9 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/app_margin_medium"
             android:text="@string/card_btn_favorite_add"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             app:boxStrokeWidth="@dimen/material_button_stroke_width"
-
             app:cornerRadius="@dimen/material_button_corner_radius"
             app:iconPadding="-24dp"
             app:iconTint="@color/black"
@@ -67,8 +66,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_pokemon_image"
             app:layout_constraintVertical_bias="1.0"
-            app:rippleColor="@color/red"
-            app:strokeColor="@color/red" />
+            app:rippleColor="@color/black"
+            app:strokeColor="@color/black" />
 
         <TextView
             android:id="@+id/textView"

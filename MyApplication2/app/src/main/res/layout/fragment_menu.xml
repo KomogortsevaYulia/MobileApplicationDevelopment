@@ -34,16 +34,15 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/app_margin_medium"
         android:text="@string/btn_menu_favorite"
-        android:textColor="@color/red"
+        android:textColor="@color/black"
         app:cornerRadius="@dimen/material_button_corner_radius"
-
         app:iconPadding="-24dp"
-        app:iconTint="@color/red"
+        app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_search_screen"
-        app:strokeColor="@color/red"
-        app:rippleColor="@color/red"
+        app:strokeColor="@color/black"
+        app:rippleColor="@color/black"
         app:boxStrokeWidth="@dimen/material_button_stroke_width" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

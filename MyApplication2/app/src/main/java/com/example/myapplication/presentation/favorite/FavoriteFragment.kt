@@ -87,12 +87,18 @@ class FavoriteFragment : Fragment(), OnBookCardClickListener {
     }
 
     override fun onRemoveFromFavoriteClicked(item: Item, position: Int) {
-        Toast.makeText(requireContext(), "$position", Toast.LENGTH_SHORT).show()
-        Log.d("BRUH", "before = ${mAdapter.getList().map { it.id }}")
-        //rcvState = mBinding.rcvFavoritePokemon.layoutManager?.onSaveInstanceState()
-        mViewModel.removeBookById(item.id)
-        mAdapter.notifyItemRemoved(0)
-        //mAdapter.notifyItemRangeChanged(position, mAdapter.getList().size)
-        Log.d("BRUH", "after = ${mAdapter.getList().map { it.id }}")
+//        Toast.makeText(requireContext(), "$position", Toast.LENGTH_SHORT).show()
+//        Log.d("BRUH", "before = ${mAdapter.getList().map { it.id }}")
+//        //rcvState = mBinding.rcvFavoritePokemon.layoutManager?.onSaveInstanceState()
+//        mViewModel.removeBookById(item.id)
+//        mAdapter.notifyItemRemoved(0)
+//        //mAdapter.notifyItemRangeChanged(position, mAdapter.getList().size)
+//        Log.d("BRUH", "after = ${mAdapter.getList().map { it.id }}")
+        mViewModel.removeBookById(item.id) {
+            mViewModel.getFavoriteBookList()
+        }
+
+//        mAdapter.notifyItemRemoved(position)
+//        Log.d("BRUH", "${mAdapter.getList().map { it.id }}")
     }
 }

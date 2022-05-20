@@ -123,7 +123,7 @@ class SearchFragment : Fragment(), OnBookCardClickListener {
 
     override fun onAddToFavoriteClicked(item: Item, position: Int) {
         mViewModel.addBookToFavorite(item)
-        mAdapter.notifyItemRemoved(position)
+        //mAdapter.notifyItemRemoved(position)
     }
 
     override fun onRemoveFromFavoriteClicked(item: Item, position: Int) {

@@ -14,8 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/app_margin_medium"
         android:hint="@string/et_pokemon_search_hint"
-        app:boxCornerRadiusBottomStart="@dimen/app_margin_medium"
-        app:boxCornerRadiusTopEnd="@dimen/app_margin_medium"
         app:boxStrokeWidth="@dimen/material_button_stroke_width"
         app:errorTextColor="@color/red"
         app:hintTextColor="@color/grey"

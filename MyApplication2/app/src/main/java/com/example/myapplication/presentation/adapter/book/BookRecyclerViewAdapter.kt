@@ -21,7 +21,6 @@ class BookRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: BookRecyclerViewHolder, position: Int) {
-        Log.d("BRUHX", "${position}")
         val item: Item = bookList[position]
         holder.bind(item)
     }

@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">PokemonLibrary</string>
+    <string name="app_name">Библиотека книг</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="btn_menu_search">Поиск</string>
     <string name="btn_menu_random">random</string>
-    <string name="btn_menu_favorite">favorite</string>
-    <string name="et_pokemon_search_hint">Desired pokemon name</string>
+    <string name="btn_menu_favorite">избранные</string>
+    <string name="et_pokemon_search_hint">Введите название книги</string>
     <string name="card_pokemon_height">Height:</string>
     <string name="card_pokemon_weight">Weight:</string>
     <string name="card_pokemon_forms">Forms:</string>
     <string name="card_pokemon_abilities">Abilities:</string>
-    <string name="card_pokemon_held_items">Held items:</string>
-    <string name="card_btn_favorite_add">add in favorite</string>
+    <string name="card_btn_favorite_add">добавить в избранное</string>
+    <string name="card_pokemon_held_items">добавить в избранные</string>
     <string name="search_not_found">Not found</string>
     <string name="card_pokemon_forms_none">No forms</string>
     <string name="card_pokemon_abilities_none">No abilities</string>
     <string name="card_pokemon_held_items_none">No held items</string>
     <string name="card_exp">Base exp: %d</string>
-    <string name="card_btn_favorite_remove">remove from favorite</string>
+    <string name="card_btn_favorite_remove">удалить из избранных</string>
     <string name="no_authors">no authors</string>
 </resources>

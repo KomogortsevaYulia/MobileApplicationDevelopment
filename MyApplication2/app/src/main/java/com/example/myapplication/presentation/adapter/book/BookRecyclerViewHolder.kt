@@ -46,6 +46,7 @@ class BookRecyclerViewHolder(
         }
         mBinding.btnCardAddInFavorite.setOnClickListener {
             if (isDeletable) {
+                Log.d("BRUH", "item ==== ${item.id}")
                 onPokemonCardClickListener.onRemoveFromFavoriteClicked(
                     item = item,
                     position = absoluteAdapterPosition
